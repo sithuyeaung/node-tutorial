@@ -1,0 +1,11 @@
+version: '3'
+services:
+  fs-photos:
+    build: .
+    image: fs-photos:test
+    command: npm run prod
+    ports:
+      - '${PORT:-3000}:${PORT:-3000}'
+    environment:
+      PORT: '${PORT:-3000}'
+      UPLOAD_DIR: 'app/uploads'
